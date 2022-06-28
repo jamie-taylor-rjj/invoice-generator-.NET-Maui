@@ -4,6 +4,7 @@ Invoice Generator but with .NET Maui.
 ## Building
 - Visual Studio 2022 Preview
 Currently, for .NET Maui Visual Studio 2022 Preview is required.
+
 Link here: [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/vs/preview/#download-preview)
 - Setup Android Emulator
 - Enable HyperV Support
@@ -13,16 +14,21 @@ Link here: [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/vs/pr
 ### Notes
 #### Gerald Verslius .NET Maui Crash Course
 Comprehensive crash course created by [Gerald Verslius](https://www.youtube.com/c/GeraldVersluis).
+
 Link below contains the YouTube Playlist and the GitHub Repository.
+
 Link here: [Gerald Verslius Crash Course](https://blog.verslu.is/maui/dotnet-maui-crash-course/)
 
 #### James Montemagno .NET Maui Crash Course
 More in-depth crash course about .NET Maui created by [James Montemagno](https://www.youtube.com/c/JamesMontemagno).
+
 Link here: [James Montemagno Crash Course](https://www.youtube.com/watch?v=DuNLR_NJv8U)
 
 #### Microsoft .NET Maui Documentation
 Link here: [What is .NET Maui?](https://docs.microsoft.com/en-us/dotnet/maui/what-is-maui)
+
 Link here: [.NET Maui Controls](https://docs.microsoft.com/en-us/dotnet/maui/user-interface/controls/)
+
 Link here: [In its Entirety](https://docs.microsoft.com/en-us/dotnet/maui/)
 
 #### .NET Maui Community Toolkit
@@ -42,4 +48,5 @@ Link here: [Tutorial](https://www.youtube.com/playlist?list=PL-_mV1UKHGpRcFC834C
 
 #### Telerik .NET Maui Controls
 Caution: Telerik is paid for, however, a free trial is possible
+
 Link here: [Telerik UI Controls](https://www.telerik.com/maui-ui)
