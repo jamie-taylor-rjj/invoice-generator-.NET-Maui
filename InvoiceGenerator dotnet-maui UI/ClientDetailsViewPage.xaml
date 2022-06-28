@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InvoiceGenerator_dotnet_maui_UI.ClientDetailsViewPage"
+             Title="ClientDetailsViewPage"
+             BackgroundColor="#272537">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <VerticalStackLayout
+                    Margin="0,0,0,350"
+                    Spacing="15"
+                    Padding="19,0">
+
+                    <StackLayout Grid.Row="0" Grid.Column="1">
+                        <Label
+                            Text="View Client Details:"
+                            TextColor="White"
+                            FontSize="32"
+                            FontAttributes="Bold"
+                            SemanticProperties.HeadingLevel="Level1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            x:Name="lbl_viewClientDetails"/>
+                    </StackLayout>
+                    <VerticalStackLayout
+                        Spacing="5">
+
+                        <StackLayout Grid.Row="1" Grid.Column="1">
+                            <Button
+                                Text="View"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                HeightRequest="60"
+                                WidthRequest="150"
+                                BackgroundColor="MediumSlateBlue"
+                                x:Name="btn_View"/>
+                        </StackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <StackLayout Padding="10">
+                        <Label
+                            Text="Client Details:"
+                            TextColor="White"
+                            FontSize="26"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,130,0,0"
+                            SemanticProperties.HeadingLevel="Level2"
+                            x:Name="lbl_clientDetails"/>
+                    </StackLayout>
+                    <StackLayout
+                        Padding="00"
+                        Spacing="0">
+
+                        <Frame
+                            BackgroundColor="MediumPurple"
+                            BorderColor="DarkSlateGray"
+                            Padding="0">
+                            <Grid Padding="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="96"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Text="Client Name:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="0"
+                                    x:Name="lbl_clientNameHeader"/>
+                                <Label
+                                    Text="Client Address:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="1"
+                                    x:Name="lbl_clientAddressHeader"/>
+                                <Label
+                                    Text="Contact Name:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="2"
+                                    x:Name="lbl_contactNameHeader"/>
+                                <Label
+                                    Text="Contact Email:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="3"
+                                    x:Name="lbl_contactEmailHeader"/>
+
+                                <BoxView
+                                    BackgroundColor="DarkSlateBlue"
+                                    HeightRequest="20"
+                                    WidthRequest="1"
+                                    Grid.Column="0"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                                <BoxView
+                                    BackgroundColor="DarkSlateBlue"
+                                    HeightRequest="20"
+                                    WidthRequest="1"
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                                <BoxView
+                                    BackgroundColor="DarkSlateBlue"
+                                    HeightRequest="20"
+                                    WidthRequest="1"
+                                    Grid.Column="2"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                            </Grid>
+                        </Frame>
+                        <ListView>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame Padding="0">
+                                            <Grid Padding="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="96"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label
+                                                    Text="{Binding ClientName}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="0"
+                                                    x:Name="lbl_clientName"/>
+                                                <Label
+                                                    Text="{Binding ClientAddress}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="1"
+                                                    x:Name="lbl_clientAddress"/>
+                                                <Label
+                                                    Text="{Binding ContactName}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="2"
+                                                    x:Name="lbl_contactName"/>
+                                                <Label
+                                                    Text="{Binding ContactEmail}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="3"
+                                                    x:Name="lbl_contactEmail"/>
+
+                                                <BoxView
+                                                    BackgroundColor="DarkSlateBlue"
+                                                    HeightRequest="20"
+                                                    WidthRequest="1"
+                                                    Grid.Column="0"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="FillAndExpand"/>
+                                                <BoxView
+                                                    BackgroundColor="DarkSlateBlue"
+                                                    HeightRequest="20"
+                                                    WidthRequest="1"
+                                                    Grid.Column="1"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="FillAndExpand"/>
+                                                <BoxView
+                                                    BackgroundColor="DarkSlateBlue"
+                                                    HeightRequest="20"
+                                                    WidthRequest="1"
+                                                    Grid.Column="2"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="FillAndExpand"/>
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

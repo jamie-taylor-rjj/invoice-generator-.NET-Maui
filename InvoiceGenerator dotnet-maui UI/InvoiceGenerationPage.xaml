@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InvoiceGenerator_dotnet_maui_UI.InvoiceGenerationPage"
+             Title="InvoiceGenerationPage"
+             BackgroundColor="#272537">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <VerticalStackLayout
+                    Margin="0,0,0,270"
+                    Spacing="15"
+                    Padding="19,0">
+
+                    <StackLayout Grid.Row="0" Grid.Column="1">
+                        <Label
+                            Text="Generate Invoice:"
+                            TextColor="White"
+                            FontSize="32"
+                            FontAttributes="Bold"
+                            SemanticProperties.HeadingLevel="Level1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            x:Name="lbl_generateInvoice"/>
+                    </StackLayout>
+                    <VerticalStackLayout
+                        Spacing="5">
+
+                        <StackLayout Grid.Row="1" Grid.Column="1">
+                            <Label
+                                Text="Add Line Items:"
+                                TextColor="White"
+                                FontSize="26"
+                                FontAttributes="Bold"
+                                SemanticProperties.HeadingLevel="Level2"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"
+                                x:Name="lbl_addLineItems"/>
+                        </StackLayout>
+                        <HorizontalStackLayout
+                            Spacing="10"
+                            Padding="15,0">
+
+                            <StackLayout Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
+                                <Label
+                                    Text="Select Client Name:"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="lbl_selectClientName"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="2" Grid.Column="1">
+                                <Picker
+                                    Title="Select here..."
+                                    TitleColor="White"
+                                    FontSize="16"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="pcker_clientName"/>
+                            </StackLayout>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout
+                            Spacing="10"
+                            Padding="15,0">
+
+                            <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+                                <Label
+                                    Text="Invoice Reference:"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="lbl_invoiceReference"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="3" Grid.Column="1">
+                                <Entry
+                                    Text="Invoice here..."
+                                    TextColor="White"
+                                    FontSize="16"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    IsReadOnly="True"
+                                    x:Name="txt_invoiceReference"/>
+                            </StackLayout>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout
+                            Spacing="10"
+                            Padding="15,0">
+
+                            <StackLayout Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                                <Label
+                                    Text="Enter Line Item Description:"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="lbl_enterLineItemDescription"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="4" Grid.Column="1">
+                                <Entry
+                                    Placeholder="Enter here..."
+                                    PlaceholderColor="White"
+                                    FontSize="16"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="txt_lineItemDescription"/>
+                            </StackLayout>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout
+                            Spacing="10"
+                            Padding="15,0">
+
+                            <StackLayout Grid.Row="5" Grid.Column="1" Orientation="Horizontal">
+                                <Label
+                                    Text="Enter Line Item Cost:"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="lbl_lineItemCost"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="5" Grid.Column="1">
+                                <Entry
+                                    Placeholder="Enter here..."
+                                    PlaceholderColor="White"
+                                    FontSize="16"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="txt_lineItemCost"/>
+                            </StackLayout>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout
+                            Spacing="10"
+                            Padding="15,0">
+
+                            <StackLayout Grid.Row="6" Grid.Column="1" Orientation="Horizontal">
+                                <Label
+                                    Text="Enter Line Item Quantity:"
+                                    TextColor="White"
+                                    FontSize="18"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="lbl_lineItemQuantity"/>
+                            </StackLayout>
+                            <StackLayout Grid.Row="6" Grid.Column="1">
+                                <Entry
+                                    Placeholder="Enter here..."
+                                    PlaceholderColor="White"
+                                    FontSize="16"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    x:Name="txt_lineItemQuantity"/>
+                            </StackLayout>
+                        </HorizontalStackLayout>
+                        <VerticalStackLayout
+                            Spacing="20"
+                            Padding="15,0">
+
+                            <StackLayout Grid.Row="7" Grid.Column="1">
+                                <Button
+                                    Text="Add Line Item"
+                                    TextColor="White"
+                                    FontAttributes="Bold"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    HeightRequest="60"
+                                    WidthRequest="150"
+                                    BackgroundColor="MediumSlateBlue"
+                                    x:Name="btn_addLineItem"/>
+                            </StackLayout>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <StackLayout Padding="10">
+                        <Label
+                            Text="View Line Item Details:"
+                            TextColor="White"
+                            FontSize="26"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Margin="0,400,0,0"
+                            SemanticProperties.HeadingLevel="Level3"
+                            x:Name="lbl_viewLineItemDetails"/>
+                    </StackLayout>
+                    <StackLayout
+                        Padding="20"
+                        Spacing="0">
+
+                        <Frame
+                            BackgroundColor="MediumPurple"
+                            BorderColor="DarkSlateGray"
+                            Padding="0">
+                            <Grid Padding="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="96"/>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Text="Description:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="0"
+                                    x:Name="lbl_lineItemDescriptionHeader"/>
+                                <Label
+                                    Text="Cost:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="1"
+                                    x:Name="lbl_lineItemCostHeader"/>
+                                <Label
+                                    Text="Quantity:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="2"
+                                    x:Name="lbl_lineItemQuantityHeader"/>
+                                <Label
+                                    Text="Total:"
+                                    TextColor="White"
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    Grid.Column="3"
+                                    x:Name="lbl_lineItemTotalHeader"/>
+
+                                <BoxView
+                                    BackgroundColor="DarkSlateBlue"
+                                    HeightRequest="20"
+                                    WidthRequest="1"
+                                    Grid.Column="0"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                                <BoxView
+                                    BackgroundColor="DarkSlateBlue"
+                                    HeightRequest="20"
+                                    WidthRequest="1"
+                                    Grid.Column="1"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                                <BoxView
+                                    BackgroundColor="DarkSlateBlue"
+                                    HeightRequest="20"
+                                    WidthRequest="1"
+                                    Grid.Column="2"
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="FillAndExpand"/>
+                            </Grid>
+                        </Frame>
+                        <ListView>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Frame Padding="0">
+                                            <Grid Padding="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="100"/>
+                                                    <ColumnDefinition Width="96"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label
+                                                    Text="{Binding LineItemDescription}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="0"
+                                                    x:Name="lbl_lineItemDescription"/>
+                                                <Label
+                                                    Text="{Binding LineItemCost}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="1"
+                                                    x:Name="lbl_lineItemCost"/>
+                                                <Label
+                                                    Text="{Binding LineItemQuantity}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="2"
+                                                    x:Name="lbl_lineItemQuantity"/>
+                                                <Label
+                                                    Text="{Binding LineItemTotal}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Center"
+                                                    Margin="10,0,10,0"
+                                                    Grid.Column="3"
+                                                    x:Name="lbl_lineItemTotal"/>
+
+                                                <BoxView
+                                                    BackgroundColor="DarkSlateBlue"
+                                                    HeightRequest="20"
+                                                    WidthRequest="1"
+                                                    Grid.Column="0"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="FillAndExpand"/>
+                                                <BoxView
+                                                    BackgroundColor="DarkSlateBlue"
+                                                    HeightRequest="20"
+                                                    WidthRequest="1"
+                                                    Grid.Column="1"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="FillAndExpand"/>
+                                                <BoxView
+                                                    BackgroundColor="DarkSlateBlue"
+                                                    HeightRequest="20"
+                                                    WidthRequest="1"
+                                                    Grid.Column="2"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    VerticalOptions="FillAndExpand"/>
+                                            </Grid>
+                                        </Frame>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </VerticalStackLayout>
+                <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <VerticalStackLayout
+                        Spacing="10"
+                        Padding="10,0">
+
+                        <StackLayout Grid.Row="0" Grid.Column="1">
+                            <Label
+                                Text="Add VAT/Sales Tax:"
+                                TextColor="White"
+                                FontSize="26"
+                                FontAttributes="Bold"
+                                SemanticProperties.HeadingLevel="Level4"
+                                Margin="0,480,0,0"
+                                HorizontalOptions="Center"
+                                x:Name="lbl_addVATSalesTax"/>
+                        </StackLayout>
+                        <VerticalStackLayout
+                            Spacing="5">
+                            <HorizontalStackLayout
+                                Spacing="10"
+                                Padding="10,0">
+
+                                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                                    <Label
+                                        Text="Enter VAT/Sales Tax:"
+                                        TextColor="White"
+                                        FontSize="18"
+                                        FontAttributes="Bold"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="Start"
+                                        x:Name="lbl_VATSalesTax"/>
+                                </StackLayout>
+                                <StackLayout Grid.Row="1" Grid.Column="1">
+                                    <Entry
+                                        Placeholder="Enter here..."
+                                        PlaceholderColor="White"
+                                        FontSize="16"
+                                        HorizontalOptions="Start"
+                                        VerticalOptions="Center"
+                                        x:Name="txt_VATSalesTax"/>
+                                </StackLayout>
+                            </HorizontalStackLayout>
+                            <VerticalStackLayout
+                                Spacing="20"
+                                Padding="15,0">
+
+                                <StackLayout Grid.Row="2" Grid.Column="1">
+                                    <Button
+                                        Text="Generate"
+                                        TextColor="White"
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Center"
+                                        Margin="0,10,0,0"
+                                        HeightRequest="60"
+                                        WidthRequest="110"
+                                        BackgroundColor="MediumSlateBlue"
+                                        x:Name="btn_Generate"/>
+                                </StackLayout>
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Grid>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+ 

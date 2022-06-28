@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InvoiceGenerator_dotnet_maui_UI.StartPage"
+             Title="StartPage"
+             BackgroundColor="#272537">
+
+    <ContentPage.Content>
+        <Grid Margin="30,0,20,0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <VerticalStackLayout
+                Spacing="25"
+                Padding="30,0"
+                VerticalOptions="Center">
+
+                <StackLayout Grid.Row="0">
+                    <Label
+                        Text="Invoice Generator"
+                        TextColor="White"
+                        SemanticProperties.HeadingLevel="Level1"
+                        FontSize="32"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        x:Name="lbl_invoiceGenerator"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1">
+                    <Label
+                        Text="Please Select:"
+                        TextColor="White"
+                        SemanticProperties.HeadingLevel="Level2"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        x:Name="lbl_pleaseSelect"/>
+                </StackLayout>
+                <HorizontalStackLayout
+                    Spacing="10"
+                    Padding="15,0"
+                    Margin="0,0,10,0">
+
+                    <StackLayout Grid.Column="1">
+                        <Button
+                            Text="Generate Invoice"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="180"
+                            BackgroundColor="MediumSlateBlue"
+                            Clicked="btn_generateInvoice_Clicked"
+                            x:Name="btn_generateInvoice"/>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <Button
+                            Text="Client Details"
+                            FontAttributes="Bold"
+                            HorizontalOptions="Center"
+                            HeightRequest="60"
+                            WidthRequest="180"
+                            BackgroundColor="MediumSlateBlue"
+                            Clicked="btn_clientDetails_Clicked"
+                            x:Name="btn_clientDetails"/>
+                    </StackLayout>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
