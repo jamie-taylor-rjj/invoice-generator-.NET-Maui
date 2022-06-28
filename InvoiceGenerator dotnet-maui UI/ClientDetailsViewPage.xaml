@@ -2,8 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="InvoiceGenerator_dotnet_maui_UI.ClientDetailsViewPage"
+             xmlns:viewmodel="clr-namespace:InvoiceGenerator_dotnet_maui_UI.ViewModels"
+             xmlns:model="clr-namespace:InvoiceGenerator_dotnet_maui_UI.ViewModels"
              Title="ClientDetailsViewPage"
-             BackgroundColor="#272537">
+             BackgroundColor="#272537"
+             x:DataType="viewmodel:ClientDetailsViewModel">
 
     <ContentPage.Content>
         <ScrollView>
@@ -44,6 +47,8 @@
                                 HeightRequest="60"
                                 WidthRequest="150"
                                 BackgroundColor="MediumSlateBlue"
+                                Command="{Binding GetClientsCommand}"
+                                IsEnabled="{Binding IsNotBusy}"
                                 x:Name="btn_View"/>
                         </StackLayout>
                     </VerticalStackLayout>
@@ -132,18 +137,22 @@
                                     VerticalOptions="FillAndExpand"/>
                             </Grid>
                         </Frame>
-                        <ListView>
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <Frame Padding="0">
-                                            <Grid Padding="0">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="100"/>
-                                                    <ColumnDefinition Width="100"/>
-                                                    <ColumnDefinition Width="100"/>
-                                                    <ColumnDefinition Width="96"/>
-                                                </Grid.ColumnDefinitions>
+                        <RefreshView
+                            Grid.ColumnSpan="2"
+                            Command="{Binding GetClientsCommand}"
+                            IsRefreshing="{Binding IsRefreshing}">
+                            <ListView ItemsSource="{Binding Clients}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate x:DataType="model:ClientViewModel">
+                                        <ViewCell>
+                                            <Frame Padding="0">
+                                                <Grid Padding="0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="100"/>
+                                                        <ColumnDefinition Width="96"/>
+                                                    </Grid.ColumnDefinitions>
 
                                                 <Label
                                                     Text="{Binding ClientName}"
@@ -195,15 +204,17 @@
                                                     Grid.Column="2"
                                                     HorizontalOptions="EndAndExpand"
                                                     VerticalOptions="FillAndExpand"/>
-                                            </Grid>
-                                        </Frame>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                                                </Grid>
+                                            </Frame>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </RefreshView>
                     </StackLayout>
                 </VerticalStackLayout>
             </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
+    
