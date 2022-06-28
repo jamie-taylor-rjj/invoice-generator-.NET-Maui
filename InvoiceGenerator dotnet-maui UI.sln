@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceGenerator dotnet-maui UI", "InvoiceGenerator dotnet-maui UI\InvoiceGenerator dotnet-maui UI.csproj", "{857FC1C9-6D7E-4184-A35B-E9106FC53ECE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceGenerator.Domain", "InvoiceGenerator.Domain\InvoiceGenerator.Domain.csproj", "{35D586F6-5793-40FC-A037-9CE3A1EF1984}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceGenerator.BusinessLogic", "InvoiceGenerator.BusinessLogic\InvoiceGenerator.BusinessLogic.csproj", "{E99C15E8-2F27-4350-8017-FADE5A387B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{857FC1C9-6D7E-4184-A35B-E9106FC53ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{857FC1C9-6D7E-4184-A35B-E9106FC53ECE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{857FC1C9-6D7E-4184-A35B-E9106FC53ECE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{35D586F6-5793-40FC-A037-9CE3A1EF1984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35D586F6-5793-40FC-A037-9CE3A1EF1984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35D586F6-5793-40FC-A037-9CE3A1EF1984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35D586F6-5793-40FC-A037-9CE3A1EF1984}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E99C15E8-2F27-4350-8017-FADE5A387B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E99C15E8-2F27-4350-8017-FADE5A387B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E99C15E8-2F27-4350-8017-FADE5A387B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E99C15E8-2F27-4350-8017-FADE5A387B79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

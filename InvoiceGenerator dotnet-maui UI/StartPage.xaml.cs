@@ -2,10 +2,12 @@ namespace InvoiceGenerator_dotnet_maui_UI;
 
 public partial class StartPage : ContentPage
 {
-	public StartPage()
-	{
-		InitializeComponent();
-	}
+    private readonly ClientDetailsPage _clientDetailsPage;
+	public StartPage(ClientDetailsPage clientDetailsPage)
+    {
+        InitializeComponent();
+        _clientDetailsPage = clientDetailsPage;
+    }
 
     private async void btn_generateInvoice_Clicked(object sender, EventArgs e)
     {
@@ -14,6 +16,6 @@ public partial class StartPage : ContentPage
 
     private async void btn_clientDetails_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new ClientDetailsPage());
+        await Navigation.PushAsync(_clientDetailsPage);
     }
 }
