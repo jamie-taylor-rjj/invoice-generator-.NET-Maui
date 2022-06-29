@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceGenerator dotnet-maui UI", "InvoiceGenerator dotnet-maui UI\InvoiceGenerator dotnet-maui UI.csproj", "{857FC1C9-6D7E-4184-A35B-E9106FC53ECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceGenerator-dotnet-maui-UI", "InvoiceGenerator-dotnet-maui-UI\InvoiceGenerator-dotnet-maui-UI.csproj", "{857FC1C9-6D7E-4184-A35B-E9106FC53ECE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceGenerator.Domain", "InvoiceGenerator.Domain\InvoiceGenerator.Domain.csproj", "{35D586F6-5793-40FC-A037-9CE3A1EF1984}"
 EndProject
