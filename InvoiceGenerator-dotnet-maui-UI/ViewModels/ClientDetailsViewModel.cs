@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using InvoiceGenerator.BusinessLogic;
+using InvoiceGenerator.Maui.BusinessLogic;
 using System.Collections.ObjectModel;
 
 namespace InvoiceGenerator_dotnet_maui_UI.ViewModels

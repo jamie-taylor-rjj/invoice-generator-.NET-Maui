@@ -66,8 +66,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\InvoiceGenerator.BusinessLogic\InvoiceGenerator.BusinessLogic.csproj" />
-	  <ProjectReference Include="..\InvoiceGenerator.Domain\InvoiceGenerator.Domain.csproj" />
+	  <ProjectReference Include="..\InvoiceGenerator.Maui.BusinessLogic\InvoiceGenerator.Maui.BusinessLogic.csproj" />
+	  <ProjectReference Include="..\InvoiceGenerator.Maui.Domain\InvoiceGenerator.Maui.Domain.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
