@@ -10,4 +10,13 @@ public partial class InvoiceGenerationPage : ContentPage
 		InitializeComponent();
 		BindingContext = viewModel;
 	}
+
+    private void pcker_clientName_SelectedIndexChanged(object sender, EventArgs e)
+    {
+		var selectedClientViewModel = (ClientNameViewModel)pcker_clientName.SelectedItem;
+
+		var clientName = selectedClientViewModel.ClientName;
+		var todayAsString = DateTime.Today.ToString("dd-mm-yyyy");
+		txt_invoiceReference.Text = $"RJJ-{clientName}-{todayAsString}"; // Create invoice reference
+    }
 }
