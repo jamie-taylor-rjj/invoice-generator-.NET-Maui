@@ -1,0 +1,66 @@
+## This workflow is based on the one found at: https://blog.taranissoftware.com/building-net-maui-apps-with-github-actions
+
+name: CI Build
+
+on:
+  push:
+    ## Only run for pushes directly to main
+    branches: [ main ]
+    ## Ignore any pushes which only have changes to markdown and git files
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+  pull_request:
+    ## Run on all PRs to main
+    branches: [ main ]
+  ## Allow builds to be run from the Actions view
+  workflow_dispatch:
+## Provide read-only access to the repo
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true                     # Disable the .NET logo
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience
+  DOTNET_CLI_TELEMETRY_OPTOUT: true       # Disable sending .NET CLI telemetry
+
+jobs:
+
+  # Build a macOS app
+  build-ios:
+    ## iOS apps can only be built on macOS
+    runs-on: macos-11
+    name: iOS Build
+    steps:
+
+      ## Get latest code
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      ## Install .NET v6
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+          include-prerelease: true
+
+      ## Install .NET Maui build tools
+      - name: Install MAUI Workloads
+        run: |
+          dotnet workload install ios --ignore-failed-sources
+          dotnet workload install maui --ignore-failed-sources
+
+      ## Restore .NET packages
+      - name: Restore Dependencies
+        run: dotnet restore InvoiceGenerator-dotnet-maui-UI/InvoiceGenerator-dotnet-maui-UI.csproj
+
+      ## Build an app for iOS
+      - name: Build MAUI iOS
+        run: dotnet build InvoiceGenerator-dotnet-maui-UI/InvoiceGenerator-dotnet-maui-UI.csproj -c Release -f net6.0-ios --no-restore
+
+      ## Allow the iOS app to be downloaded later
+      - name: Upload iOS Artifact
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: ios-ci-build
+          path: ./**/*.app/

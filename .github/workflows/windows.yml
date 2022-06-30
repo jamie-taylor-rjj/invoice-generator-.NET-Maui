@@ -1,0 +1,75 @@
+## This workflow is based on the one found at: https://blog.taranissoftware.com/building-net-maui-apps-with-github-actions
+
+name: CI Build
+
+on:
+  push:
+    ## Only run for pushes directly to main
+    branches: [ main ]
+    ## Ignore any pushes which only have changes to markdown and git files
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.gitignore'
+  pull_request:
+    ## Run on all PRs to main
+    branches: [ main ]
+  ## Allow builds to be run from the Actions view
+  workflow_dispatch:
+## Provide read-only access to the repo
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true                     # Disable the .NET logo
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true # Disable the .NET first time experience
+  DOTNET_CLI_TELEMETRY_OPTOUT: true       # Disable sending .NET CLI telemetry
+
+jobs:
+
+  # Build a Windows MSIX (installer package)
+  build-windows:
+    runs-on: windows-2022
+    name: Windows Build
+    steps:
+
+      ## Get latest code
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      ## Install .NET v6
+      - name: Setup .NET 6
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 6.0.x
+          include-prerelease: true
+
+      ## Install MSBuild vLatest
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-prerelease: true
+
+      ## Install .NET Maui build tools
+      - name: Install MAUI Workloads
+        run: |
+          dotnet workload install maui --ignore-failed-sources
+
+      ## Restore .NET packages
+      - name: Restore Dependencies
+        run: dotnet restore InvoiceGenerator-dotnet-maui-UI/InvoiceGenerator-dotnet-maui-UI.csproj
+
+      ## Build as an MSIX
+      - name: Build MAUI app for Windows
+        ## Note: it is curently easier to build WIHTOUT SIGNING the app.
+        ## Signing the app requires a certificate, Gerald provides steps
+        ## for generating a certificate in this video: https://youtu.be/8lvdLa0v8zY?t=446
+        run: dotnet publish InvoiceGenerator-dotnet-maui-UI/InvoiceGenerator-dotnet-maui-UI.csproj -c Release -f:net6.0-windows10.0.19041.0
+        ## Once a certificate is generated, the following command will create a signed MSIX
+        ## run: dotnet publish InvoiceGenerator-dotnet-maui-UI/InvoiceGenerator-dotnet-maui-UI.csproj -c Release -f:net6.0-windows10.0.19041.0 /p:GenerateAppxPackageOnBuild=true /p:AppxPackageSigningEnabled=true /p:PackageCertificateThumbprint="${{ secrets.WINDOWS_PFX_THUMBPRINT }}"
+
+      ## Allow the MXIS to be downloaded later
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: windows-ci-build
+          path: .\**\AppPackages\**\*.*
