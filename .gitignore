@@ -256,4 +256,4 @@ paket-files/
 .DS_Store
 
 ## Application config
-appsettings.json
+# appsettings.json
