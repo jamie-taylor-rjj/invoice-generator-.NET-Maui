@@ -76,6 +76,11 @@
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     x:Name="pcker_clientName"/>
+                                <ActivityIndicator
+                                    IsRunning="True"
+                                    IsVisible="{Binding AreClientNamesLoading}"
+                                    HeightRequest="25"
+                                    WidthRequest="25"/>
                             </StackLayout>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout

@@ -12,6 +12,9 @@ namespace InvoiceGenerator_dotnet_maui_UI.ViewModels
 {
     public partial class InvoiceGenerationViewModel : ObservableObject
     {
+        [ObservableProperty]
+        private bool _areClientNamesLoading;
+
         public ObservableCollection<ClientNameViewModel> ClientNames { get; } = new ObservableCollection<ClientNameViewModel>();
 
         private readonly IClientService _clientService;
@@ -24,6 +27,8 @@ namespace InvoiceGenerator_dotnet_maui_UI.ViewModels
         [RelayCommand]
         public void GetClientNames()
         {
+            _areClientNamesLoading = true;
+
             var allClientNames = _clientService.GetClientNames();
 
             if (ClientNames.Count != 0)
@@ -39,6 +44,8 @@ namespace InvoiceGenerator_dotnet_maui_UI.ViewModels
                 };
                 ClientNames.Add(newVm);
             }
+
+            _areClientNamesLoading = false;
         }
     }
 
