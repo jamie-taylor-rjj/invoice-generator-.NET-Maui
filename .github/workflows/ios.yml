@@ -1,6 +1,6 @@
 ## This workflow is based on the one found at: https://blog.taranissoftware.com/building-net-maui-apps-with-github-actions
 
-name: CI Build
+name: iOS Build
 
 on:
   push:
@@ -56,7 +56,7 @@ jobs:
 
       ## Build an app for iOS
       - name: Build MAUI iOS
-        run: dotnet build InvoiceGenerator-dotnet-maui-UI/InvoiceGenerator-dotnet-maui-UI.csproj -c Release -f net6.0-ios --no-restore
+        run: dotnet build InvoiceGenerator-dotnet-maui-UI/InvoiceGenerator-dotnet-maui-UI.csproj -c Release -f net6.0-ios --no-restore -p:PublishTrimmed=false
 
       ## Allow the iOS app to be downloaded later
       - name: Upload iOS Artifact
