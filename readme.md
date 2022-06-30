@@ -15,6 +15,12 @@ Link here: [Visual Studio 2022 Preview](https://visualstudio.microsoft.com/vs/pr
 - Enable Windows Developer Mode
 - Setup MacBuild Host for iOS Development
 
+## Build Status
+
+| Android | Windows | MacOS Catalyst |
+|---------|---------|----------------|
+| [![Android Build](https://github.com/jamie-taylor-rjj/invoice-generator-.NET-Maui/actions/workflows/android.yml/badge.svg)](https://github.com/jamie-taylor-rjj/invoice-generator-.NET-Maui/actions/workflows/android.yml) | [![Windows Build](https://github.com/jamie-taylor-rjj/invoice-generator-.NET-Maui/actions/workflows/windows.yml/badge.svg)](https://github.com/jamie-taylor-rjj/invoice-generator-.NET-Maui/actions/workflows/windows.yml) | [![macOS Build](https://github.com/jamie-taylor-rjj/invoice-generator-.NET-Maui/actions/workflows/macos.yml/badge.svg)](https://github.com/jamie-taylor-rjj/invoice-generator-.NET-Maui/actions/workflows/macos.yml) |
+
 ### Notes
 
 #### Gerald Verslius .NET Maui Crash Course
