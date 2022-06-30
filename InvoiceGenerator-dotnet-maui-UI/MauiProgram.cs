@@ -1,5 +1,5 @@
-﻿using InvoiceGenerator.BusinessLogic;
-using InvoiceGenerator.Domain;
+﻿using InvoiceGenerator.Maui.BusinessLogic;
+using InvoiceGenerator.Maui.Domain;
 using InvoiceGenerator_dotnet_maui_UI.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

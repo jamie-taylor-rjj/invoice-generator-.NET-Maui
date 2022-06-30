@@ -1,4 +1,4 @@
-﻿namespace InvoiceGenerator.Domain.Models
+﻿namespace InvoiceGenerator.Maui.Domain.Models
 {
     public class LineItem
     {

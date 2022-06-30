@@ -1,7 +1,7 @@
-﻿using InvoiceGenerator.Domain.Models;
+﻿using InvoiceGenerator.Maui.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace InvoiceGenerator.Domain
+namespace InvoiceGenerator.Maui.Domain
 {
 
     public class InvoiceDbContext : DbContext

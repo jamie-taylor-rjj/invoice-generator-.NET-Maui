@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InvoiceGenerator.Domain
+namespace InvoiceGenerator.Maui.Domain
 {
     public class Repository<T> : IRepository<T> where T : class
     {
