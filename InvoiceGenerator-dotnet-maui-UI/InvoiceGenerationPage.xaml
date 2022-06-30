@@ -69,7 +69,11 @@
                                 <Picker
                                     Title="Select here..."
                                     TitleColor="White"
+                                    TextColor="White"
                                     FontSize="16"
+                                    SelectedIndexChanged="pcker_clientName_SelectedIndexChanged"
+                                    ItemsSource="{Binding ClientNames}"
+                                    ItemDisplayBinding="{Binding ClientName}"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     x:Name="pcker_clientName"/>
