@@ -1,6 +1,6 @@
 ## This workflow is based on the one found at: https://blog.taranissoftware.com/building-net-maui-apps-with-github-actions
 
-name: CI Build
+name: Android Build
 
 on:
   push:
