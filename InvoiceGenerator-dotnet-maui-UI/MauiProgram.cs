@@ -3,7 +3,6 @@ using InvoiceGenerator.Maui.Domain;
 using InvoiceGenerator_dotnet_maui_UI.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace InvoiceGenerator_dotnet_maui_UI;

@@ -1,12 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using InvoiceGenerator.BusinessLogic;
-using System;
-using System.Collections.Generic;
+using InvoiceGenerator.Maui.BusinessLogic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InvoiceGenerator_dotnet_maui_UI.ViewModels
 {

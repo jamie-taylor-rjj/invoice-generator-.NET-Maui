@@ -126,6 +126,7 @@
                                 <Entry
                                     Placeholder="Enter here..."
                                     PlaceholderColor="White"
+                                    TextColor="White"
                                     FontSize="16"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
@@ -150,10 +151,13 @@
                                 <Entry
                                     Placeholder="Enter here..."
                                     PlaceholderColor="White"
+                                    TextColor="White"
                                     FontSize="16"
+                                    Keyboard="Numeric"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
-                                    x:Name="txt_lineItemCost"/>
+                                    x:Name="txt_lineItemCost">
+                                </Entry>
                             </StackLayout>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout
@@ -174,7 +178,9 @@
                                 <Entry
                                     Placeholder="Enter here..."
                                     PlaceholderColor="White"
+                                    TextColor="White"
                                     FontSize="16"
+                                    Keyboard="Numeric"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     x:Name="txt_lineItemQuantity"/>
