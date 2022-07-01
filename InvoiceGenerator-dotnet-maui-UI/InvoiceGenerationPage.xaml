@@ -128,6 +128,7 @@
                                     PlaceholderColor="White"
                                     TextColor="White"
                                     FontSize="16"
+                                    TextChanged="txt_lineItemDescription_TextChanged"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     x:Name="txt_lineItemDescription"/>
@@ -154,6 +155,7 @@
                                     TextColor="White"
                                     FontSize="16"
                                     Keyboard="Numeric"
+                                    TextChanged="txt_lineItemCost_TextChanged"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     x:Name="txt_lineItemCost">
@@ -181,6 +183,7 @@
                                     TextColor="White"
                                     FontSize="16"
                                     Keyboard="Numeric"
+                                    TextChanged="txt_lineItemQuantity_TextChanged"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     x:Name="txt_lineItemQuantity"/>
@@ -199,6 +202,7 @@
                                     VerticalOptions="Center"
                                     HeightRequest="60"
                                     WidthRequest="150"
+                                    Command="{Binding AddLineItemsCommand}"
                                     BackgroundColor="MediumSlateBlue"
                                     x:Name="btn_addLineItem"/>
                             </StackLayout>
@@ -289,7 +293,7 @@
                                     VerticalOptions="FillAndExpand"/>
                             </Grid>
                         </Frame>
-                        <ListView>
+                        <ListView ItemsSource="{Binding LineItems}">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <ViewCell>
@@ -303,28 +307,28 @@
                                                 </Grid.ColumnDefinitions>
 
                                                 <Label
-                                                    Text="{Binding LineItemDescription}"
+                                                    Text="{Binding Description}"
                                                     VerticalOptions="Center"
                                                     HorizontalOptions="Center"
                                                     Margin="10,0,10,0"
                                                     Grid.Column="0"
                                                     x:Name="lbl_lineItemDescription"/>
                                                 <Label
-                                                    Text="{Binding LineItemCost}"
+                                                    Text="{Binding Cost}"
                                                     VerticalOptions="Center"
                                                     HorizontalOptions="Center"
                                                     Margin="10,0,10,0"
                                                     Grid.Column="1"
                                                     x:Name="lbl_lineItemCost"/>
                                                 <Label
-                                                    Text="{Binding LineItemQuantity}"
+                                                    Text="{Binding Quantity}"
                                                     VerticalOptions="Center"
                                                     HorizontalOptions="Center"
                                                     Margin="10,0,10,0"
                                                     Grid.Column="2"
                                                     x:Name="lbl_lineItemQuantity"/>
                                                 <Label
-                                                    Text="{Binding LineItemTotal}"
+                                                    Text="{Binding Total}"
                                                     VerticalOptions="Center"
                                                     HorizontalOptions="Center"
                                                     Margin="10,0,10,0"
