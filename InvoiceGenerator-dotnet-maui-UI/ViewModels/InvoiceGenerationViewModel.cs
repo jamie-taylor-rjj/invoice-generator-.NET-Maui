@@ -5,12 +5,17 @@ using System.Collections.ObjectModel;
 
 namespace InvoiceGenerator_dotnet_maui_UI.ViewModels
 {
-    public partial class InvoiceGenerationViewModel : ObservableObject
+    public partial class InvoiceGenerationViewModel : BaseViewModel
     {
         [ObservableProperty]
         private bool _areClientNamesLoading;
 
+        [ObservableProperty]
+        public LineItemDisplayModel _lineItemVm = new();
+
         public ObservableCollection<ClientNameViewModel> ClientNames { get; } = new ObservableCollection<ClientNameViewModel>();
+
+        public ObservableCollection<LineItemDisplayModel> LineItems { get; } = new ObservableCollection<LineItemDisplayModel>();
 
         private readonly IClientService _clientService;
         public InvoiceGenerationViewModel(IClientService clientService)
@@ -35,12 +40,29 @@ namespace InvoiceGenerator_dotnet_maui_UI.ViewModels
             {
                 var newVm = new ClientNameViewModel
                 {
-                    ClientName = clientName.ClientName
+                    ClientName = clientName.ClientName,
+                    Id = clientName.ClientId
                 };
                 ClientNames.Add(newVm);
             }
 
             _areClientNamesLoading = false;
+        }
+
+        [RelayCommand]
+        public void AddLineItems()
+        {
+            IsBusy = true;
+
+            var newLineItem = new LineItemDisplayModel
+            {
+                Description = _lineItemVm.Description,
+                Cost = _lineItemVm.Cost,
+                Quantity = _lineItemVm.Quantity
+            };
+            LineItems.Add(newLineItem);
+
+            IsBusy = false;
         }
     }
 
@@ -48,5 +70,13 @@ namespace InvoiceGenerator_dotnet_maui_UI.ViewModels
     {
         public Guid Id { get; set; }
         public string ClientName { get; set; }
+    }
+
+    public class LineItemDisplayModel
+    {
+        public string Description { get; set; }
+        public double Cost { get; set; }
+        public int Quantity { get; set; }
+        public double Total => Cost * Quantity;
     }
 }
