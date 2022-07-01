@@ -32,6 +32,8 @@ public static class MauiProgram
 		builder.Services
 			.AddTransient<AppShell>()
 			.AddTransient<StartPage>()
+			.AddTransient<InvoiceGenerationPage>()
+			.AddTransient<InvoiceGenerationViewModel>()
 			.AddTransient<ClientDetailsPage>()
 			.AddSingleton<ClientDetailsViewPage>()
 			.AddTransient<ClientDetailsViewModel>()

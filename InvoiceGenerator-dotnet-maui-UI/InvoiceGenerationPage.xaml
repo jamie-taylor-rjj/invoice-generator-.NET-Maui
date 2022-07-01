@@ -70,9 +70,17 @@
                                     Title="Select here..."
                                     TitleColor="White"
                                     FontSize="16"
+                                    SelectedIndexChanged="pcker_clientName_SelectedIndexChanged"
+                                    ItemsSource="{Binding ClientNames}"
+                                    ItemDisplayBinding="{Binding ClientName}"
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     x:Name="pcker_clientName"/>
+                                <ActivityIndicator
+                                    IsRunning="True"
+                                    IsVisible="{Binding AreClientNamesLoading}"
+                                    HeightRequest="25"
+                                    WidthRequest="25"/>
                             </StackLayout>
                         </HorizontalStackLayout>
                         <HorizontalStackLayout
