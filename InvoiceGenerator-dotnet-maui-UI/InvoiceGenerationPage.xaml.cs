@@ -13,7 +13,9 @@ public partial class InvoiceGenerationPage : ContentPage
 
     private void pcker_clientName_SelectedIndexChanged(object sender, EventArgs e)
     {
-		var selectedClientViewModel = (ClientNameViewModel)pcker_clientName.SelectedItem;
+		pcker_clientName.TextColor = Color.FromRgb(255, 255, 255);
+
+        var selectedClientViewModel = (ClientNameViewModel)pcker_clientName.SelectedItem;
 
 		var clientName = selectedClientViewModel.ClientName;
 		var todayAsString = DateTime.Today.ToString("dd-mm-yyyy");
