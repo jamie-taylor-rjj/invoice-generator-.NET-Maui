@@ -1,6 +1,4 @@
-using InvoiceGenerator.Maui.BusinessLogic;
 using InvoiceGenerator_dotnet_maui_UI.ViewModels;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 

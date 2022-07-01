@@ -1,6 +1,5 @@
 ﻿using Android.App;
 using Android.Content.PM;
-using Android.OS;
 
 namespace InvoiceGenerator_dotnet_maui_UI;
 
